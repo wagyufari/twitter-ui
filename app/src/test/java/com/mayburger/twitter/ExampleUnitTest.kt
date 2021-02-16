@@ -1,4 +1,4 @@
-package com.mayburger.starter
+package com.mayburger.twitter
 
 import org.junit.Test
 

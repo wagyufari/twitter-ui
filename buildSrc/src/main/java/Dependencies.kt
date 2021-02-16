@@ -6,7 +6,7 @@ object Versions{
     val coroutines = "1.3.9"
     val coreKtx = "1.3.2"
     val appCompatJetpack = "1.2.0"
-    val constraintLayout = "2.0.4"
+    val constraintLayout = "2.0.1"
     val legacySupport = "1.0.0"
     val animatedVectorDrawable = "1.1.0"
     val cardView = "1.0.0"
@@ -60,4 +60,9 @@ object kotlinDependencies{
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
     val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+}
+
+object otherDependencies{
+    val fragmentViewBindingDelegate = "com.github.Zhuinden:fragmentviewbindingdelegate-kt:1.0.0"
+
 }

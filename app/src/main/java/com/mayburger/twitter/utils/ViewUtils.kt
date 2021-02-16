@@ -1,4 +1,4 @@
-package com.mayburger.starter.utils
+package com.mayburger.twitter.utils
 
 import android.animation.*
 import android.content.Context
@@ -16,8 +16,6 @@ import androidx.core.animation.addListener
 import androidx.core.animation.doOnEnd
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
-import kotlin.math.cos
-import kotlin.math.sin
 
 
 object ViewUtils {
@@ -136,17 +134,20 @@ object ViewUtils {
         }
     }
 
-    fun View.scale(scale: Float, duration: Long? = 1000, onEnd: (() -> Unit)? = {}, after: Long? = 0) {
+    fun View.scale(scale: Float, duration: Long? = 1000, onEnd: (() -> Unit)? = {}, after: Long? = 0, interpolator:TimeInterpolator) {
         AnimatorSet().apply {
             playSequentially()
             play(ObjectAnimator.ofFloat(this@scale, View.SCALE_X, scale).apply {
                 this.duration = duration ?: 1000
+                this.interpolator = interpolator
             }).after(after ?: 0)
             play(ObjectAnimator.ofFloat(this@scale, View.SCALE_Y, scale).apply {
                 this.duration = duration ?: 1000
-                addListener(onEnd = {
+                this.interpolator = interpolator
+                doOnEnd {
                     onEnd?.invoke()
-                })
+
+                }
             }).after(after ?: 0)
             start()
         }

@@ -1,4 +1,4 @@
-package com.mayburger.starter.utils.textfont
+package com.mayburger.twitter.utils.textfont
 
 import android.content.Context
 import android.graphics.Typeface

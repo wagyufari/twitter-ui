@@ -1,16 +1,16 @@
-package com.mayburger.starter.utils.textfont
+package com.mayburger.twitter.utils.textfont
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatEditText
-import com.mayburger.starter.R
-import com.mayburger.starter.base.BaseApplication
+import androidx.appcompat.widget.AppCompatTextView
+import com.mayburger.twitter.R
+import com.mayburger.twitter.base.BaseApplication
 
 
 /**
  * Created by mayburger
  */
-class EditTextFont(context: Context, attrs: AttributeSet) : AppCompatEditText(context, attrs) {
+class TextFont(context: Context, attrs: AttributeSet) : AppCompatTextView(context, attrs) {
 
     init {
         val array = context.theme.obtainStyledAttributes(
@@ -19,7 +19,7 @@ class EditTextFont(context: Context, attrs: AttributeSet) : AppCompatEditText(co
                 0, 0)
         val typefaceType: Int
         try {
-            typefaceType = array.getInteger(R.styleable.EditTextFont_typeface, 0)
+            typefaceType = array.getInteger(R.styleable.TextFont_typeface, 0)
         } finally {
             array.recycle()
         }

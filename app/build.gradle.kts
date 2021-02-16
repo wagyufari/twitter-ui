@@ -11,7 +11,7 @@ android {
     buildToolsVersion("30.0.1")
 
     defaultConfig {
-        applicationId = "com.mayburger.starter"
+        applicationId = "com.mayburger.twitter"
         minSdkVersion(21)
         targetSdkVersion(30)
         versionCode = 1
@@ -53,9 +53,9 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    dataBinding {
-        isEnabled = true
-        version = "3.3.2"
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -64,6 +64,10 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(hiltDependencies.hilt)
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(hiltDependencies.hiltCompiler)
     implementation(hiltDependencies.hiltViewModel)
 
@@ -92,6 +96,8 @@ dependencies {
 
     implementation(glideDependencies.glide)
     kapt(glideDependencies.glideCompiler)
+
+    implementation(otherDependencies.fragmentViewBindingDelegate)
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

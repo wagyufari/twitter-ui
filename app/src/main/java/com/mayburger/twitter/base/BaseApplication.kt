@@ -1,10 +1,10 @@
-package com.mayburger.starter.base
+package com.mayburger.twitter.base
 
 import android.app.Application
 import android.content.Context
 import android.graphics.Typeface
 import androidx.multidex.MultiDex
-import com.mayburger.starter.utils.textfont.TypeFactory
+import com.mayburger.twitter.utils.textfont.TypeFactory
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
